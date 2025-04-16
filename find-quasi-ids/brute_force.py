@@ -4,7 +4,7 @@ from itertools import combinations
 import pandas as pd
 import os
 
-def compute_distinct_ratios_by_size(df, min_comb_size=2, max_comb_size=5, top_k=10, output_dir="output"):
+def compute_distinct_ratios_by_size(df, min_comb_size=6, max_comb_size=6, top_k=10, output_dir="output"):
     candidate_columns = df.columns
     num_rows = len(df)
 
