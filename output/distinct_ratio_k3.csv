@@ -1,0 +1,11 @@
+attributes,distinct_ratio,unique_combinations
+"Academic Year, Income by $1,000 Range, TAP Recipient Dollars",0.6457,52306
+"TAP Sector Group, Income by $1,000 Range, TAP Recipient Dollars",0.6012,48706
+"Recipient Age Group, Income by $1,000 Range, TAP Recipient Dollars",0.5956,48249
+"Academic Year, Recipient Age Group, TAP Recipient Dollars",0.5672,45945
+"Academic Year, TAP Sector Group, TAP Recipient Dollars",0.5669,45922
+"TAP Level of Study, Income by $1,000 Range, TAP Recipient Dollars",0.5513,44664
+"Sector Type, Income by $1,000 Range, TAP Recipient Dollars",0.5343,43280
+"TAP Schedule Letter, Income by $1,000 Range, TAP Recipient Dollars",0.5333,43206
+"Academic Year, TAP Schedule Letter, TAP Recipient Dollars",0.5318,43085
+"TAP Financial Status, Income by $1,000 Range, TAP Recipient Dollars",0.5307,42995
