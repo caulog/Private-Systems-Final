@@ -1,18 +1,13 @@
-# brute_force.py
-import pandas as pd
+# brute_force.py# brute_force.py
+
 from itertools import combinations
-import argparse
 
-def load_data(path):
-    df = pd.read_csv(path)
-    return df
-
-def compute_distinct_ratios(df, max_comb_size=3):
-    candidate_columns = df.columns.tolist()
+def compute_distinct_ratios_by_size(df, min_comb_size=2, max_comb_size=5, top_k=10):
+    candidate_columns = df.columns
     num_rows = len(df)
-    results = []
 
-    for r in range(1, max_comb_size + 1):
+    for r in range(min_comb_size, max_comb_size + 1):
+        results = []
         for combo in combinations(candidate_columns, r):
             subset = df[list(combo)]
             num_unique = len(subset.drop_duplicates())
@@ -23,23 +18,8 @@ def compute_distinct_ratios(df, max_comb_size=3):
                 'unique_combinations': num_unique
             })
 
-    return sorted(results, key=lambda x: -x['distinct_ratio'])
+        results.sort(key=lambda x: -x['distinct_ratio'])
 
-def print_top(results, top_k=10):
-    print(f"\nTop {top_k} attribute combinations by distinct ratio:\n")
-    for r in results[:top_k]:
-        print(f"{r['attributes']}: distinct_ratio={r['distinct_ratio']}, unique_combinations={r['unique_combinations']}")
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--path', type=str, default='data/TAP_PRUNED.csv', help='Path to TAP pruned dataset')
-    parser.add_argument('--max_comb_size', type=int, default=3, help='Maximum size of attribute combinations')
-    parser.add_argument('--top_k', type=int, default=10, help='Number of top combinations to display')
-    args = parser.parse_args()
-
-    df = load_data(args.path)
-    results = compute_distinct_ratios(df, args.max_comb_size)
-    print_top(results, args.top_k)
-
-if __name__ == "__main__":
-    main()
+        print(f"\nTop {top_k} combinations of size {r} by distinct ratio:\n")
+        for r_entry in results[:top_k]:
+            print(f"{r_entry['attributes']}: distinct_ratio={r_entry['distinct_ratio']}, unique_combinations={r_entry['unique_combinations']}")

@@ -2,6 +2,7 @@ import argparse
 
 import ibis
 
+import brute_force
 
 def set_argparse():
     parser = argparse.ArgumentParser(
@@ -16,3 +17,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     table = ibis.read_csv(args.file)
+
+    # Run brute-force analysis
+    df = table.to_pandas()
+    brute_force.compute_distinct_ratios_by_size(df)
