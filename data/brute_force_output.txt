@@ -1,0 +1,54 @@
+Top 10 combinations of size 2 by distinct ratio:
+
+('Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.4934, unique_combinations=39971
+('Academic Year', 'TAP Recipient Dollars'): distinct_ratio=0.4797, unique_combinations=38859
+('TAP Sector Group', 'TAP Recipient Dollars'): distinct_ratio=0.3721, unique_combinations=30143
+('Recipient Age Group', 'TAP Recipient Dollars'): distinct_ratio=0.3421, unique_combinations=27711
+('TAP Schedule Letter', 'TAP Recipient Dollars'): distinct_ratio=0.3269, unique_combinations=26482
+('TAP Level of Study', 'TAP Recipient Dollars'): distinct_ratio=0.2577, unique_combinations=20877
+('Sector Type', 'TAP Recipient Dollars'): distinct_ratio=0.2219, unique_combinations=17976
+('TAP Award Schedule', 'TAP Recipient Dollars'): distinct_ratio=0.2175, unique_combinations=17621
+('TAP Recipient FTEs', 'TAP Recipient Dollars'): distinct_ratio=0.2164, unique_combinations=17530
+('TAP Financial Status', 'TAP Recipient Dollars'): distinct_ratio=0.2163, unique_combinations=17526
+
+
+Top 10 combinations of size 3 by distinct ratio:
+
+('Academic Year', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6457, unique_combinations=52306
+('TAP Sector Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6012, unique_combinations=48706
+('Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.5956, unique_combinations=48249
+('Academic Year', 'Recipient Age Group', 'TAP Recipient Dollars'): distinct_ratio=0.5672, unique_combinations=45945
+('Academic Year', 'TAP Sector Group', 'TAP Recipient Dollars'): distinct_ratio=0.5669, unique_combinations=45922
+('TAP Level of Study', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.5513, unique_combinations=44664
+('Sector Type', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.5343, unique_combinations=43280
+('TAP Schedule Letter', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.5333, unique_combinations=43206
+('Academic Year', 'TAP Schedule Letter', 'TAP Recipient Dollars'): distinct_ratio=0.5318, unique_combinations=43085
+('TAP Financial Status', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.5307, unique_combinations=42995
+
+
+Top 10 combinations of size 4 by distinct ratio:
+
+('Academic Year', 'TAP Sector Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8045, unique_combinations=65176
+('Academic Year', 'Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.7829, unique_combinations=63419
+('TAP Sector Group', 'Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.7128, unique_combinations=57740
+('Academic Year', 'TAP Level of Study', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.7116, unique_combinations=57649
+('Academic Year', 'TAP Schedule Letter', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6966, unique_combinations=56428
+('Academic Year', 'Sector Type', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6928, unique_combinations=56124
+('Academic Year', 'TAP Financial Status', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6885, unique_combinations=55774
+('TAP Sector Group', 'TAP Schedule Letter', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6509, unique_combinations=52733
+('Academic Year', 'TAP Award Schedule', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.6506, unique_combinations=52709
+('Academic Year', 'TAP Sector Group', 'Recipient Age Group', 'TAP Recipient Dollars'): distinct_ratio=0.6499, unique_combinations=52647
+
+
+Top 10 combinations of size 5 by distinct ratio:
+
+('Academic Year', 'TAP Sector Group', 'Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.9361, unique_combinations=75832
+('Academic Year', 'TAP Sector Group', 'TAP Schedule Letter', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8726, unique_combinations=70692
+('Academic Year', 'TAP Level of Study', 'TAP Sector Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8691, unique_combinations=70407
+('Academic Year', 'TAP Sector Group', 'TAP Financial Status', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8624, unique_combinations=69864
+('Academic Year', 'TAP Level of Study', 'Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8594, unique_combinations=69623
+('Academic Year', 'Sector Type', 'Recipient Age Group', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8461, unique_combinations=68540
+('Academic Year', 'Recipient Age Group', 'TAP Schedule Letter', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8413, unique_combinations=68152
+('Academic Year', 'Recipient Age Group', 'TAP Financial Status', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8212, unique_combinations=66525
+('Academic Year', 'TAP Sector Group', 'TAP Award Schedule', 'Income by $1,000 Range', 'TAP Recipient Dollars'): distinct_ratio=0.8089, unique_combinations=65531
+('Academic Year', 'TAP Sector Group', 'Recipient Age Group', 'TAP Schedule Letter', 'Income by $1,000 Range'): distinct_ratio=0.8071, unique_combinations=65381
