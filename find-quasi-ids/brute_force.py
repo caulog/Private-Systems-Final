@@ -32,6 +32,6 @@ def compute_distinct_ratios_by_size(df, min_comb_size=6, max_comb_size=6, top_k=
             print(f"{r_entry['attributes']}: distinct_ratio={r_entry['distinct_ratio']}, unique_combinations={r_entry['unique_combinations']}")
 
         # Save to CSV
-        output_path = os.path.join(output_dir, f"greedy_distinct_ratio_k{r}.csv")
+        output_path = os.path.join(output_dir, f"brute_force_distinct_ratio_k{r}.csv")
         pd.DataFrame(top_results).to_csv(output_path, index=False)
         print(f"Saved to {output_path}")
