@@ -1,28 +1,44 @@
-# brute_force.py
-
 from itertools import combinations
 import pandas as pd
 import os
 
-def compute_distinct_ratios_by_size(df, min_comb_size=6, max_comb_size=6, top_k=10, output_dir="output"):
-    candidate_columns = df.columns
-    num_rows = len(df)
+def compute_distinct_ratios_by_size(df, attribute_min=6, attribute_max=6, top_k=10, output_dir="output"):
+    """
+    Brute force analysis of data frame to find combinations of attributes with high distinct ratios
 
-    # Ensure output directory exists
-    os.makedirs(output_dir, exist_ok=True)
+    Distinct ratio definition from paper: 
+    A combination is an α-distinct quasi-identifier if, after removing ≤ (1−α) tuples, the rest have unique values in that combination.
 
-    for r in range(min_comb_size, max_comb_size + 1):
+        To compute:
+        distinct_ratio = (number of unique values for combination) / (number of rows)
+
+        To evaluate:
+        A ratio near 1 means the combo uniquely identifies nearly all individuals.
+    """
+
+    # initialize rows and columns
+    n = len(df)
+    m = df.columns
+
+    # for each attribute combination size
+    for r in range(attribute_min, attribute_max + 1):
         results = []
-        for combo in combinations(candidate_columns, r):
-            subset = df[list(combo)]
-            num_unique = len(subset.drop_duplicates())
-            ratio = num_unique / num_rows
+
+        # loop through all possible combinations of columns
+        # this is very expensive when r and m are large -- but our dataset is small
+        for combo in combinations(m, r):
+            subset = df[list(combo)]                        # takes subset of dataframe with only current columns
+            num_unique = len(subset.drop_duplicates())      # removes duplicate rows to get unique row count
+            ratio = num_unique / n                          # calculates distinct ratio
+            
+            # adds each to result dataframe
             results.append({
                 'attributes': ", ".join(combo),
                 'distinct_ratio': round(ratio, 4),
                 'unique_combinations': num_unique
             })
 
+        # sorts all combinations by highest distinct ratio and returns top k
         results.sort(key=lambda x: -x['distinct_ratio'])
         top_results = results[:top_k]
 
