@@ -1,8 +1,12 @@
 [project]
 name = "ny-tap-tuition"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pseudo-identifier study of the NY TAP Tuition public dataset"
 readme = "README.md"
+authors = [
+    { name = "Olivia Caulfield", email = "ogc2111@columbia.edu" },
+    { name = "Pablo Ordorica Wiener", email = "pablo.ordorica@columbia.edu" }
+]
 requires-python = ">=3.12"
 dependencies = [
     "find-quasi-ids",
