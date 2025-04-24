@@ -33,7 +33,7 @@ def sample_for_greedy_min_key(table, epsilon=0.1, delta=0.01):
     return sampled
 
 
-def greedy_min_key(table, output_dir="output"):
+def greedy_min_key(table, distinct_ratio_target=None, output_dir="output"):
     """
     Implementation of the Greedy Minimum Key Algorithm which given a table returns a list of the column names that are a key for the given table. A key is a subset of columns that uniquely identify each tuple in a table.
 
@@ -74,9 +74,15 @@ def greedy_min_key(table, output_dir="output"):
         # Keep only pairs not separated by the selected attribute
         pairs = pairs.filter(t[best_col] == t_view[best_col])
 
+        if distinct_ratio_target:
+            unique_count = table.select(selected_cols).distinct().count().execute()
+            distinct_ratio = unique_count / table.count().execute()
+
+            if distinct_ratio * 100 >= distinct_ratio_target:
+                break
+
     unique_count = table.select(selected_cols).distinct().count().execute()
     distinct_ratio = unique_count / table.count().execute()
-
     print(
         f"{selected_cols}: distinct_ratio={distinct_ratio}, unique_combinations={unique_count}"
     )
