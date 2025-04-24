@@ -15,6 +15,7 @@ def simulate_auxiliary_knowledge(df, known_attributes):
     """
     grouped = df.groupby(known_attributes).size().reset_index(name='count')
 
+    num_users = len(df)
     total_groups = len(grouped)
     num_unique_groups = len(grouped[grouped['count'] == 1])
     average_group_size = grouped['count'].mean()
@@ -26,11 +27,12 @@ def simulate_auxiliary_knowledge(df, known_attributes):
         "known_attributes": known_attributes,
         "total_groups": total_groups,
         "num_unique_groups": num_unique_groups,
-        "percent_unique": round(num_unique_groups / total_groups * 100, 2),
+        "percent_unique": round(num_unique_groups / num_users * 100, 2),
         "average_group_size": round(average_group_size, 2),
         "max_group_size": max_group_size,
         "min_group_size": min_group_size,
-        "anonymity_distribution": anonymity_distribution.to_dict()
+        "anonymity_distribution": anonymity_distribution.to_dict(),
+        "num_users" : num_users
     }
 
 if __name__ == "__main__":
@@ -38,7 +40,7 @@ if __name__ == "__main__":
     df = pd.read_csv("data/TAP_PRUNED.csv")
 
     # Define known auxiliary attributes
-    known = ['TAP Financial Status', 'Income by $1,000 Range', 'TAP Recipient Dollars']
+    known = ['Academic Year', 'Income by $1,000 Range', 'TAP Recipient Dollars']
 
     # Run the simulation
     stats = simulate_auxiliary_knowledge(df, known)
@@ -54,3 +56,6 @@ if __name__ == "__main__":
     print("\nAnonymity Distribution (group size → # of groups):")
     for size, count in stats['anonymity_distribution'].items():
         print(f"  {size}: {count}")
+    
+    print(f"\nnum users: {stats['num_users']} ")
+
