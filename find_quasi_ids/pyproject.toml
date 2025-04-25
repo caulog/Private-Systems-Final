@@ -1,0 +1,21 @@
+[project]
+name = "find-quasi-ids"
+version = "0.1.0"
+description = "Tool to search for quasi-identifiers with different algorithms."
+readme = "README.md"
+authors = [
+    { name = "Olivia Caulfield", email = "ogc2111@columbia.edu" },
+    { name = "Pablo Ordorica Wiener", email = "pablo.ordorica@columbia.edu" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ibis-framework[duckdb]>=10.4.0",
+    "pandas>=2.2.3",
+]
+
+[project.scripts]
+find-quasi-ids = "find_quasi_ids.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

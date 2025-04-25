@@ -1,9 +1,17 @@
 [project]
-name = "find-quasi-ids"
+name = "ny-tap-tuition"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pseudo-identifier study of the NY TAP Tuition public dataset"
 readme = "README.md"
+authors = [
+    { name = "Olivia Caulfield", email = "ogc2111@columbia.edu" },
+    { name = "Pablo Ordorica Wiener", email = "pablo.ordorica@columbia.edu" }
+]
 requires-python = ">=3.12"
 dependencies = [
-    "ibis-framework[duckdb]>=10.4.0",
+    "find-quasi-ids",
+    "pandas>=2.2.3",
 ]
+
+[tool.uv.sources]
+find-quasi-ids = { path = "find_quasi_ids", editable = true }
