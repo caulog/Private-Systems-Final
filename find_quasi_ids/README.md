@@ -81,12 +81,14 @@ find-quasi-ids -f  {brute,greedy} [algorithm options]
 
 ### Algorithm Options
 
-You must specify one of the following algorithms:
+This tool provides two algorithms for finding quasi-identifiers:
 
-- `brute`: Run the brute-force algorithm
-- `greedy`: Run the greedy algorithm
+- **brute**: Exhaustively searches all possible attribute combinations.
+- **greedy**: Implements an efficient greedy approximation algorithm for finding small quasi-identifiers, based on the method described in:
 
-Each algorithm may have its own additional options (see help for details).
+Rajeev Motwani and Ying Xu. “Efficient Algorithms for Masking and Finding Quasi-Identifiers.” Proceedings of the Conference on Very Large Data Bases (VLDB), 2007.
+
+The greedy algorithm uses the concepts of separation ratio and distinct ratio to efficiently identify quasi-identifiers with provable guarantees on size and quality, as detailed in the referenced paper.
 
 ### Examples
 
