@@ -76,8 +76,8 @@ def main():
             df = table.to_pandas()
             brute_force.compute_distinct_ratios_by_size(
                 df,
-                min_comb_size=args.num_cols_start,
-                max_comb_size=args.num_cols_max,
+                attribute_min=args.num_cols_start,
+                attribute_max=args.num_cols_max,
                 top_k=args.top_k,
                 output_dir=args.out_dir,
             )

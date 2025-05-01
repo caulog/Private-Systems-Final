@@ -37,10 +37,10 @@ def simulate_auxiliary_knowledge(df, known_attributes):
 
 if __name__ == "__main__":
     # Load the data
-    df = pd.read_csv("data/TAP_PRUNED.csv")
+    df = pd.read_csv("data/TAP_PRUNED_10k.csv")
 
     # Define known auxiliary attributes
-    known = ['Academic Year', 'Income by $1,000 Range', 'TAP Recipient Dollars']
+    known = ['Academic Year', 'Income by $10,000 Range', 'TAP Recipient Dollars']
 
     # Run the simulation
     stats = simulate_auxiliary_knowledge(df, known)
