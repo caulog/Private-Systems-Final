@@ -78,7 +78,7 @@ def main():
                 df,
                 min_comb_size=args.num_cols_start,
                 max_comb_size=args.num_cols_max,
-                top_k=args.brute_top_k,
+                top_k=args.top_k,
                 output_dir=args.out_dir,
             )
 
